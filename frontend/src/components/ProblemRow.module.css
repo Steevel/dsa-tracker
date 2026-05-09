@@ -1,0 +1,171 @@
+.row {
+  display: grid;
+  grid-template-columns: 50px 1fr 100px 160px;
+  align-items: center;
+  padding: 0.7rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+  animation: fadeIn 0.3s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background: var(--bg-hover);
+}
+
+.rowDone {
+  background: rgba(0, 200, 150, 0.02);
+}
+
+/* Checkbox */
+.checkCell {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-light);
+  border-radius: 5px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s, transform 0.1s;
+}
+
+.checkbox:hover {
+  border-color: var(--easy);
+  transform: scale(1.1);
+}
+
+.checkboxDone {
+  background: var(--easy);
+  border-color: var(--easy);
+}
+
+.checkboxToggling {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+.checkmark {
+  font-size: 0.7rem;
+  color: #000;
+  font-weight: 900;
+}
+
+/* Title */
+.titleCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.problemNum {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 26px;
+}
+
+.problemNumDone {
+  color: var(--easy);
+}
+
+.problemTitle {
+  font-size: 0.87rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s;
+}
+
+.titleDone {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--easy);
+}
+
+/* Level badge */
+.levelCell {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.levelBadge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+
+.easy {
+  color: var(--easy);
+  background: var(--easy-bg);
+}
+
+.medium {
+  color: var(--medium);
+  background: var(--medium-bg);
+}
+
+.hard {
+  color: var(--hard);
+  background: var(--hard-bg);
+}
+
+/* Links */
+.linksCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.linkBtn {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid;
+  transition: opacity 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.linkBtn:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.youtube {
+  color: #ff4444;
+  border-color: rgba(255, 68, 68, 0.3);
+  background: rgba(255, 68, 68, 0.08);
+}
+
+.leetcode {
+  color: #ffa31a;
+  border-color: rgba(255, 163, 26, 0.3);
+  background: rgba(255, 163, 26, 0.08);
+}
+
+.article {
+  color: var(--text-secondary);
+  border-color: var(--border-light);
+  background: transparent;
+}
