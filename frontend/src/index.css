@@ -1,0 +1,117 @@
+:root {
+  /* Core palette */
+  --bg-primary: #080b0f;
+  --bg-secondary: #0e1318;
+  --bg-card: #111820;
+  --bg-hover: #161f28;
+  --bg-elevated: #1a2535;
+
+  /* Borders */
+  --border: #1e2d3d;
+  --border-light: #243447;
+
+  /* Accent - electric cyan */
+  --accent: #00d4ff;
+  --accent-dim: #00d4ff22;
+  --accent-hover: #33ddff;
+
+  /* Text */
+  --text-primary: #e8edf2;
+  --text-secondary: #8899aa;
+  --text-muted: #4a6070;
+
+  /* Difficulty colors */
+  --easy: #00c896;
+  --easy-bg: #00c89615;
+  --medium: #ffa73b;
+  --medium-bg: #ffa73b15;
+  --hard: #ff5572;
+  --hard-bg: #ff557215;
+
+  /* Fonts */
+  --font-display: "Syne", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  /* Shadows */
+  --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.06);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Base elements */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+input, textarea {
+  font-family: var(--font-mono);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; max-height: 0; }
+  to { opacity: 1; max-height: 2000px; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.2); }
+  50% { box-shadow: 0 0 0 6px rgba(0, 212, 255, 0); }
+}
+
+@keyframes scanline {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
