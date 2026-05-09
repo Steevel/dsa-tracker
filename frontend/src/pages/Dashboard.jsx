@@ -109,7 +109,7 @@ export default function Dashboard() {
       const done = topic.problems.filter(
         (p) => progressMap[`${topic._id}_${p._id}`]
       ).length;
-      return done > 0;
+      return topic.problems.length > 0 && done === topic.problems.length;
     }
     if (filter === "In Progress") {
       const done = topic.problems.filter(
